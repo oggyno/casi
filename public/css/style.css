@@ -1,5 +1,10 @@
 a {
   text-decoration: none !important;
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
 }
 
 .nav-item:hover {
@@ -7,8 +12,11 @@ a {
 }
 
 header img {
-  height: 380px;
-  width: 75%;
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: auto;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -36,7 +44,6 @@ footer a {
 }
 
 .transfer {
-  padding: 100px;
   text-align: center;
 }
 
@@ -51,9 +58,7 @@ footer a {
 }
 
 .detail {
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 2%;
+  text-align: center;
 }
 
 .Premium {
