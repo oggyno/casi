@@ -1,5 +1,5 @@
 const express = require('express')
-
+const User = require('../models/user')
 const router = express.Router();
 
 router.get('/signin', async (req,res) => {
@@ -15,18 +15,54 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 })
 
-router.post('/login', (req,res) => {
+router.post('/login', async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-    
-    //apakah user ini terdaftar
-    if (email == "ha@hi.com" && password == "12345678"){
+    accounts =  await User.find();
+    await accounts.forEach((account) => {
+        if (email == account.email && password == account.password) {
+            req.session.isLoggedIn = true;
+            res.redirect('/');
+        }
+        else {
+            res.render('pages/signin', {error: 'Wrong Password!'})
+        }
+    })
+    res.render('pages/signin', {error: 'No email found!'})
+})
+
+router.post('/register', async (req, res) => {
+    const name = req.body.name;
+    const email = req.body.email;
+    const password = req.body.password;
+    const password_ = req.body.password_;
+
+    accounts =  await User.find();
+    //cek apakah email terdaftar
+    await accounts.forEach((account) => {
+        if (email == account.email) {
+            res.render('pages/register', {error: 'Email sudah terdaftar!'})
+        }
+    })
+    if (password != password_) {
+        res.render('pages/register', {error: 'Password harus sama!'})
+    }
+    else {
+        const user = new User({
+            name: name,
+            email: email,
+            password: password
+        });
+        await user.save((err, res) => {
+            if (err) console.error(err);
+            else {
+                console.log('Berhasil terdaftar');
+            }
+        })
         req.session.isLoggedIn = true;
         res.redirect('/');
     }
-    else {
-        res.render('pages/signin');
-    }
 })
+
 
 module.exports = router;
