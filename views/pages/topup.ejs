@@ -27,11 +27,17 @@
     <div style="text-align: center">
       <h2>Selamat datang di area Top up</h2>
       <p>Top Up Dengan Casi sangat aman dan nyaman</p>
+
+      <div style="text-align: center">
+        <span class="wrap"></span>
+        <h1>Saldo :</h1>
+        <label id="saldo"></label>
+      </div>
       <form class="topup" action="">
         <div style="padding-right: 7%">
           <label for="saldo">Masukkan jumlah saldo : </label>
         </div>
-        <input type="text" />
+        <input id="inputsaldo" type="text" />
         <br /><br />
         <div style="padding-right: 32%">
           <label for="Bank">Pilihan Bank:</label>
@@ -60,7 +66,7 @@
         </div>
         <input type="text" name="" id="" maxlength="15" />
         <br /><br />
-        <input class="btn btn-primary" type="button" value="Send" />
+        <button id="send">Send</button>
       </form>
       <br />
       <br />
@@ -68,5 +74,6 @@
       <br />
     </div>
     <%- include('../layouts/footer.ejs'); %>
+    <script src="/js/topup.js"></script>
   </body>
 </html>
