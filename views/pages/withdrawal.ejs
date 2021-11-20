@@ -24,6 +24,10 @@
   </head>
   <body>
     <%- include('../layouts/navbar.ejs'); %>
+    <div style="text-align: center">
+      <h3>Saldo :</h3>
+      <label id="saldo" for=""></label>
+    </div>
     <div class="container">
       <div class="select">
         <br />
@@ -43,12 +47,13 @@
       </div>
       <br />
       <p>Jumlah Penarikan Saldo :</p>
-      <input type="text" placeholder="Amount" /><br />
+      <input id="tariksaldo" type="text" placeholder="Amount" /><br />
       <p style="font-style: italic"><small>*No Charge Fee </small></p>
       <div class="button">
-        <button type="submit">Withdraw</button>
+        <button id="btn_w" type="submit">Withdraw</button>
       </div>
     </div>
     <%- include('../layouts/footer.ejs'); %>
+    <script src="/js/tariksaldo.js"></script>
   </body>
 </html>

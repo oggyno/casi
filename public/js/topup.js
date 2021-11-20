@@ -4,7 +4,7 @@ let totalbalance = 0;
 const tp = [];
 const send = document.getElementById("send");
 
-const formatter = new Intl.NumberFormat('en-US', {
+const formatter = new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
     minimumFractionDigits: 2,
@@ -36,4 +36,4 @@ send.addEventListener('click', () => {
         return inputsaldo.value = '';
     }
 }
-}); 
+});

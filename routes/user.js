@@ -33,6 +33,8 @@ router.post('/login', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     const name = req.body.name;
+    const norek = req.body.norek;
+    const nohp = req.body.nohp;
     const email = req.body.email;
     const password = req.body.password;
     const password_ = req.body.password_;
@@ -50,6 +52,8 @@ router.post('/register', async (req, res) => {
     else {
         const user = new User({
             name: name,
+            norek: norek,
+            nohp: nohp,
             email: email,
             password: password
         });
