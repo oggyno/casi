@@ -36,7 +36,8 @@ const userRouter = require('./routes/user');
 app.use('/', indexRouter);
 app.use('/user', userRouter);
 
+const port = process.env.PORT || 3000
 
-app.listen('3000', () => {
+app.listen(port, () => {
     console.log('Server sudah berjalan di port 3000')
 })

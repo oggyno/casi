@@ -83,6 +83,10 @@
       </header>
       <div>
         <hr />
+        <div style="text-align: center;">
+          <h3>Saldo : </h3>
+          <label id="saldo"></label>
+        </div>
         <div class="Redeem">
             <h1 class="display-5">Redeem Code</h1>
             <p>Klik Generate untuk mendapatkan kode promo</p>
@@ -96,25 +100,13 @@
             <p id="randomfield"></p>
           </form>
         </div>
+        <div style="text-align: center;">
+          <p>Masukkan kode untuk mendapatkan hadiah</p>
+          <input type="text" id="n" required>
+          <button class="btn btn-primary" id="btn_">Go!</button>
+        </div>
         <%- include('../layouts/footer.ejs'); %>
-        <script>
-            function randomString() {
-              //define a variable consisting alphabets in small and capital letter
-              var characters = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789";
-      
-              //specify the length for the new string
-              var lenString = 7;
-              var randomstring = "";
-      
-              //loop to select a new character in each iteration
-              for (var i = 0; i < lenString; i++) {
-                var rnum = Math.floor(Math.random() * characters.length);
-                randomstring += characters.substring(rnum, rnum + 1);
-              }
-      
-              //display the generated string
-              document.getElementById("randomfield").innerHTML = randomstring;
-            }
+        <script src="/js/redeemcode.js">
         </script>
   </body>
 </html>

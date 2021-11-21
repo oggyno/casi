@@ -24,35 +24,48 @@
   </head>
   <body>
     <%- include('../layouts/navbar.ejs'); %>
-    <div class="trfrek">
-      <div style="line-height: 5%">
-        <p>Nomor Rekening Tujuan :</p>
-        <input type="text" name="" id="" maxlength="15" />
-      </div>
-      <br />
-      <div style="line-height: 5%">
-        <div style="margin-right: 7%">
-          <p>Jumlah Uang :</p>
-        </div>
-        <div>
-          <input type="text" name="" id="" />
-        </div>
-      </div>
-      <br />
-      <div style="line-height: 5%">
-        <div style="margin-right: 11%">
-          <p>Pesan :</p>
-        </div>
-        <div>
-          <input type="text" name="" id="" />
-        </div>
-      </div>
-      <br />
-      <div style="margin-right: 5%">
-        <a class="btn btn-primary" href="/transfer" role="button">Back</a>
-        <button class="btn btn-primary" type="submit">Send</button>
-      </div>
+    <div style="text-align: center; padding-top: 1%">
+      <h3>Saldo :</h3>
+      <label id="Saldo"></label>
     </div>
+    <br />
+    <form class="topup" action="">
+      <div class="trfrek">
+        <div style="padding-bottom: 3%">
+          <h3>Transfer Antar Rekening</h3>
+        </div>
+        <div style="line-height: 5%">
+          <div style="padding: 1%">
+            <label for="norek">Nomor Rekening Tujuan : </label>
+          </div>
+          <input type="text" name="" id="norek" maxlength="15" />
+        </div>
+        <br />
+        <div style="line-height: 5%">
+          <div style="margin-right: 7%">
+            <label for="Saldo">Jumlah saldo : </label>
+          </div>
+          <div>
+            <input type="text" name="trf_rek" id="inputSaldo" required />
+          </div>
+        </div>
+        <br />
+        <div style="line-height: 5%">
+          <div style="margin-right: 11%">
+            <p>Pesan :</p>
+          </div>
+          <div>
+            <input type="text" name="" id="" />
+          </div>
+        </div>
+        <br />
+        <div style="margin-right: 5%">
+          <a class="btn btn-primary" href="/transfer" role="button">Back</a>
+          <button class="btn btn-primary" id="btnTrf">Send</button>
+        </div>
+      </div>
+    </form>
     <%- include('../layouts/footer.ejs'); %>
+    <script src="/js/trf_rek.js"></script>
   </body>
 </html>

@@ -30,13 +30,13 @@
 
       <div style="text-align: center">
         <h3>Saldo :</h3>
-        <label id="saldo"></label>
+        <label name="saldo" id="saldo"></label>
       </div>
-      <form class="topup" action="">
+      <form method="post" class="topup" action="/index/topup">
         <div style="padding-right: 7%">
           <label for="saldo">Masukkan jumlah saldo : </label>
         </div>
-        <input id="inputsaldo" type="text" required />
+        <input name="inputsaldo" id="inputsaldo" type="text" required />
         <br /><br />
         <div style="padding-right: 32%">
           <label for="Bank">Pilihan Bank:</label>
@@ -63,7 +63,7 @@
         <div style="padding-right: 10%">
           <label for="norek">Masukkan Nomor Rek : </label>
         </div>
-        <input type="text" name="" id="" maxlength="15" />
+        <input type="text" name="norek" id="" maxlength="15" />
         <br /><br />
         <button id="send">Send</button>
       </form>

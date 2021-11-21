@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
 const topupSchema = mongoose.Schema({
-    name: {
-        type: String,
+    jumlah_transaksi: {
+        type: Number,
         required: true
     },
-    transaksi: {
-        type: String,
+    jumlah_saldo: {
+        type: Number,
         required: true
     },
     date: {
@@ -15,4 +15,4 @@ const topupSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Top-up', topupSchema, 'topup')
+module.exports = mongoose.model('Topup', topupSchema, 'topup')

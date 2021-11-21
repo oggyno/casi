@@ -1,5 +1,5 @@
 const express = require('express')
-
+const Topup = require('../models/topup')
 const router = express.Router()
 
 router.get('/', (req,res) => {
@@ -66,5 +66,22 @@ router.get(('/premiumform'), (req,res) => {
     res.render('pages/premiumform')
 })
 
+router.post('/topup', async (req,res) => {
+    const jumlah_transaksi = req.body.inputsaldo;
+    const jml_saldo = 0;
+    jml_saldo += jumlah_transaksi;
+
+    const TP = new Topup({
+        jumlah_transaksi: jumlah_transaksi,
+        jumlah_saldo: jml_saldo
+    });
+    await TP.save((err,res) => {
+        if (err) console.log(err);
+        else {
+            console.log('Berhasil tersimpan');
+        }
+    })
+    res.redirect('/');
+})
 
 module.exports = router;
