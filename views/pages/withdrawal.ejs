@@ -28,34 +28,40 @@
       <h3>Saldo :</h3>
       <label id="saldo" for=""></label>
     </div>
-    <div class="containerhehe">
-      <div class="select">
+    <form class="topup" action="">
+      <div class="container">
+        <div class="select">
+          <div style="padding-bottom: 5%">
+            <h3>Tarik Saldo</h3>
+          </div>
+          <p>Pilih Bank :</p>
+          <select name="Bank">
+            <option value="BCA">BCA</option>
+            <option value="Mandiri">Mandiri</option>
+            <option value="BRI">BRI</option>
+            <option value="BNI">BNI</option>
+            <option value="CIMB">CIMB</option>
+          </select>
+        </div>
+        <div class="input">
+          <br />
+          <p>Nomor Rekening :</p>
+          <input type="text" name="" id="" />
+        </div>
         <br />
-        <p>Pilih Bank :</p>
-        <select name="Bank">
-          <option value="BCA">BCA</option>
-          <option value="Mandiri">Mandiri</option>
-          <option value="BRI">BRI</option>
-          <option value="BNI">BNI</option>
-          <option value="CIMB">CIMB</option>
-        </select>
+        <p>Jumlah Penarikan Saldo :</p>
+        <input
+          id="tariksaldo"
+          type="text"
+          placeholder="Amount"
+          required
+        /><br />
+        <p style="font-style: italic"><small>*No Charge Fee </small></p>
+        <div class="button">
+          <button id="btn_w" type="submit">Withdraw</button>
+        </div>
       </div>
-      <div class="input">
-        <br />
-        <p>Nomor Rekening :</p>
-        <input type="text" name="" id="" />
-      </div>
-      <br />
-      <p>Jumlah Penarikan Saldo :</p>
-      <input id="tariksaldo" type="text" placeholder="Amount" /><br />
-      <p style="font-style: italic"><small>*No Charge Fee </small></p>
-      <div class="button">
-        <button class="btn btn-primary" id="btn_w" type="submit">
-          Withdraw
-        </button>
-      </div>
-      <br /><br /><br />
-    </div>
+    </form>
     <%- include('../layouts/footer.ejs'); %>
     <script src="/js/tariksaldo.js"></script>
   </body>
